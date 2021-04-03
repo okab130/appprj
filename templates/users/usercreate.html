@@ -1,0 +1,29 @@
+{% extends "users/base.html" %}
+{% block content %}
+    <form method="POST" action="{% url 'users:signin' %}">
+      {% csrf_token %}
+      <table>
+      <tr>
+      <td><label>ユーザーID</label></td>
+      <td>{{ form.username }}</td>
+      <td>{{ form.username.errors }}</td>
+      </tr>
+      <tr>
+      <td><label>Email-Address</label></td>
+      <td>{{ form.email }}</td>
+      <td>{{ form.email.errors }}</td>
+      </tr>
+      <tr>
+      <td><label>パスワード</label></td>
+      <td>{{ form.password1 }}</td>
+      <td>{{ form.password1.errors }}</td>
+            </tr>
+      <tr>
+      <td><label>パスワード(確認)</label></td>
+      <td>{{ form.password2 }}</td>
+      <td>{{ form.password2.errors }}</td>
+      </tr>
+      </table>
+      <button type = "submit">登録</button>
+    </form>
+{% endblock %}

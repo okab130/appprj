@@ -41,7 +41,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         },
     )
     full_name = models.CharField(_('氏名'), max_length=150, blank=True)
-    email = models.EmailField(_('email address'), blank=True)
+    email = models.EmailField(_('email address'))
     departments = models.ManyToManyField(
         Department,
         verbose_name=_('所属'),
